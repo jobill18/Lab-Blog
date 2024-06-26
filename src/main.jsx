@@ -1,18 +1,28 @@
-import React from 'react';
-import ReactDOM from 'react-dom/client';
-import './index.css';
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
 import {
   Route,
   RouterProvider,
   createBrowserRouter,
   createRoutesFromElements,
-} from 'react-router-dom';
-import App from './App.jsx';
-import Home from './Components/Home/Home.jsx';
-import TopicList from './Components/TopicList/TopicList.jsx';
+} from "react-router-dom";
+import App from "./App.jsx";
+import Home from "./Components/Home/Home.jsx";
+import TopicList from "./Components/TopicList/TopicList.jsx";
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+const router = createBrowserRouter(
+  createRoutesFromElements(
+    <Route path="/" element={<App />}>
+      <Route index element={<Home />}></Route>
+      <Route path="/topics" element={<TopicList />}></Route>
+      <Route path="/post/:id" element={<Post />}></Route>
+    </Route>
+  )
+);
+
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    <RouterProvider router={router} />
+  </React.StrictMode>
 );
