@@ -10,6 +10,7 @@ import {
 import App from "./App.jsx";
 import Home from "./Components/Home/Home.jsx";
 import TopicList from "./Components/TopicList/TopicList.jsx";
+import Post from "./Components/Post/Post.jsx";
 
 const router = createBrowserRouter(
   createRoutesFromElements(

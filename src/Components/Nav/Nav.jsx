@@ -9,8 +9,12 @@ export default function Nav() {
         <img src={logo} alt="dm logo" />
       </div>
       <ul>
-          <li><Link to=''>Home</Link></li>
-          <li><Link to=''>Topics</Link></li>
+        <li>
+          <Link to="/">Home</Link>
+        </li>
+        <li>
+          <Link to="/topics">Topics</Link>
+        </li>
       </ul>
     </div>
   );
